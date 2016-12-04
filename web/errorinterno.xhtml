@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">>
+    <head>
+        <title>Error 500</title>
+        <h:outputStylesheet name="css/bootstrap.css"/>
+        <h:outputStylesheet name="css/font-awesome.css"/>
+        <h:outputStylesheet name="css/style_light.css"/>
+        <h:outputStylesheet name="fonts/font-awesome.css"/>
+        <h:outputStylesheet name="css/estilos.css"/>
+        <h:outputStylesheet  name="css/default.css"/>
+        <h:outputStylesheet name="css/component.css"/>
+        <h:outputStylesheet name="css/fullcalendar.css" />
+        <h:outputStylesheet name="css/sweetalert.css" />
+        <h:outputStylesheet name="css/sweetalert.css"/>
+        <h:outputStylesheet name="css/AdminLTE.min.css"/>
+      
+    </head>
+
+
+    <body>
+        <section>
+            <div id="wrapper">
+                <div class="overlay"></div>
+
+                <!-- Sidebar -->
+                <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+                    <ul class="nav sidebar-nav">
+                        <li class="sidebar-brand">
+                            <a href="#">
+                                <span class="fa fa-pagelines"> </span>Global Natural
+                            </a>
+                        </li>
+
+                        <ul  class="notification-menu-item  text-right alarmasale"><a href="#"><i class="fa fa-bell" aria-hidden="true"  id="alarma" ></i></a><span class="notification-bubble"  title="Notifications" style="display: inline; background-color: rgb(254, 193, 81);">1</span> </ul>
+
+                        <ul class="notification-menu-item  text-right alarmasale"><a href="#"><i class="fa fa-flag" aria-hidden="true"  id="alarma2" ></i></a><span class="notification-bubble"  title="Notifications" style="display: inline; background-color: rgb(254, 193, 81);">1</span>
+
+                        </ul>       
+
+                        <div class="row"></div>
+                        <div class="text-center">
+                            <img src="imagenes/h1.jpg" class="img-circle" height="110"> </img>
+
+
+                        </div>
+                        <li class="dropdown-menu">
+                            <div class="text-right">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+                                    <span class="fa fa-caret-down" aria-hidden="true"></span> </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <div class="text-right">
+                                        <div></div>
+                                        <li><a href="perfil/perfil.html"><span class="fa fa-file-text-o">
+                                                </span> Editar perfil</a></li>
+                                    </div>
+                                </ul>
+
+                            </div>
+
+                        </li>
+
+
+
+                        <li>
+                            <a href="index.html">
+                                <span class="fa fa-home" aria-hidden="true"></span>Inicio</a></li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">  <span class="fa fa-users"></span> Usuarios <span class="caret" >
+                                </span>
+                            </a> 
+                            <ul class="dropdown-menu" role="menu">
+                                <div></div>
+                                <li><a href="empleados/Ver_empleados.html"><span class="fa fa-file-text-o">
+                                        </span>Ver  Usuarios</a></li>
+                                <li><a href="empleados/crear_empleado.html"> <span class="fa fa-user-plus"></span>Crear Usuarios </a></li>
+                                <li><a href="empleados/Editar_Empleado.html"> <span class="fa fa-pencil-square-o">
+                                        </span>Editar Usuarios</a></li>
+                            </ul>
+                        </li>
+
+
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-file-text-o"></span> Facturacion<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <div></div>
+                                <li><a href="factura/ver_factura.html"> <span class="fa fa-file-text-o">
+                                        </span> Facturas</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-calendar"></span>Talonario <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <div></div>
+                                <li><a href="talonario/ver_talonario.html"> <span class="fa fa-calendar">
+                                        </span>Ver Talonarios</a></li>
+
+                            </ul>
+                        </li>
+
+
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="fa fa-line-chart"></span>Reporte <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <div></div>
+                                <li><a href="reportes/reportes.html"><span class="fa fa-bar-chart"> </span>Tipos de reporte
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li>
+                            <a href="Validacion.html"> <span class="fa fa-power-off"></span> Cerrar Sesión</a>
+                        </li> 
+                    </ul>
+                </nav>
+                <!-- /#sidebar-wrapper -->
+
+                <header>
+
+                    <div class="text-center"><img src="imagenes/logo3.png" height="150" width="850"> </img> </div>
+                </header>
+
+
+
+                <!-- Page Content -->
+                <div id="page-content-wrapper">
+                    <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+                        <span class="hamb-top"></span>
+                        <span class="hamb-middle"></span>
+                        <span class="hamb-bottom"></span>
+                    </button>
+
+                    <div class="row">
+                        <ol class="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+
+                        </ol>
+                        <div class="col-md-1"></div>
+                        <div class="col-xs-3 col-md-10">
+                            <div href="#" class="thumbnail">
+                                <div class="row">
+
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-10">
+
+                                        <h1 class="text-center">Error 500</h1>
+                                        <h2 class="text-center">Error Interno del Servidor</h2>
+
+                                        <div class="text-center"> <img src="imagenes/error.jpg"></img></div>
+                                        <h4>Estamos presentando problemas en el servidor, sentimos las molestias causadas por favor intentelo nuevamente mas tarde.</h4> 
+                                        <h4>Para volver al menu de inicio haga click en aceptar.</h4> 
+                                        <div class="col-md-4"></div> 
+                                        <div class="col-md-4">
+                                            <p><a class="btn btn-primary" href="index.html" role="button">Aceptar</a> </p>
+                                        </div>
+                                        <div class="col-md-4"></div> 
+
+
+                                    </div>
+
+
+                                    <div class="col-md-1"></div>              
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <script>
+                $().ready(function () {
+                    $('#alarma').click(function () {
+
+                        swal("¡Tienes un nuevo mensaje !")
+                    });
+
+                });
+            </script>
+
+
+            <script>
+                $().ready(function () {
+                    $('#alarma2').click(function () {
+
+                        swal("¡La Factura 2016017801!", "Entro a Cobro Juridico")
+                    });
+
+                });
+            </script>
+
+
+
+
+
+
+
+
+            <script type="text/javascript">
+
+
+                var myStack = {"dir1": "down", "dir2": "right", "push": "top"};
+                new PNotify({
+                    title: "Over Here",
+                    text: "Check me out. I'm in a different stack.",
+                    addclass: "stack-custom",
+                    stack: myStack
+                })
+            </script>
+
+
+            <footer>
+                <div class="panel panel-default">
+                    <div class="panel-heading"><footer class="text-center">
+                            <p><br>Copyright <span class="fa fa-copyright"></span>2016 Version 3.0</br>
+                                        </p>
+                                        </div>
+                                        </div>
+                                        </footer>
+                                        </section>
+                                        </body>
+
+
+                                        </html>

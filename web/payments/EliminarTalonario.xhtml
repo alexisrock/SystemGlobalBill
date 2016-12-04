@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Talonarios</title>
+        <h:outputStylesheet name="css/bootstrap.css"/>
+        <h:outputStylesheet name="css/font-awesome.css"/>
+        <h:outputStylesheet name="css/style_light.css"/>
+        <h:outputStylesheet name="fonts/font-awesome.css"/>
+        <h:outputStylesheet name="/css/theme.green.css"/>
+        <h:outputStylesheet name="css/estilos.css"/>
+        <h:outputStylesheet  name="css/default.css"/>
+        <h:outputStylesheet name="css/component.css"/>
+        <h:outputStylesheet name="css/fullcalendar.css" />
+        <h:outputStylesheet name="css/sweetalert.css" />
+        <h:outputStylesheet name="css/sweetalert.css"/>
+        <h:outputStylesheet name="css/AdminLTE.min.css"/>
+        
+    </h:head>
+    <h:body>
+
+        <div id="page-content-wrapper">
+            <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+                <span class="hamb-middle"></span>
+                <span class="hamb-bottom"></span>
+            </button>
+
+            <div class="row">
+                <ol class="breadcrumb">
+                    <li><a href="index.html">&nbsp; Inicio</a></li>
+                    <li>&nbsp; Talonarios </li>
+                </ol>
+                <div class="col-xs-1 col-md-1"></div>
+                <div class="col-xs-10   col-md-10">
+                    <div href="#" class="thumbnail coloralexis"> 
+                        <h1 class="text-center">Talonarios Existentes</h1>
+                        <h:form>
+                            <p:dataTable id="tablelistartalonario" styleClass="tablesorter tablesorter-green " value="#{talonarioController.listarTalonario}" var="tal">
+
+
+                                <p:column  headerText="Número de Talonario" styleClass="lead section-lead" id="talonario" filterBy="#{tal.idTalonario}" filterMatchMode="contains">
+                                    <h:outputText value="#{tal.idTalonario}"  />
+
+                                </p:column>
+                                <p:column headerText="Fecha" styleClass="lead section-lead" id="fecha" filterBy="#{tal.fecha}" filterMatchMode="contains">
+                                    <h:outputText value="#{tal.fecha}" />
+                                </p:column>
+                                <p:column headerText="Número Inicial" styleClass="lead section-lead" id="numInicial" filterBy="#{tal.numeroInicial}" filterMatchMode="contains">
+                                    <h:outputText value="#{temp.descripcion}" />
+                                </p:column>
+                                <p:column headerText="Número Final" styleClass="lead section-lead" id="numFinal" filterBy="#{tal.numeroFinal}" filterMatchMode="contains">
+                                    <h:outputText value="#{tal.numeroFinal}" />
+                                </p:column>
+                                
+                                <p:column headerText="Cantidad Disponibles" styleClass="lead section-lead" id="Disponibles" filterBy="#{tal.totalDisponible}" filterMatchMode="contains">
+                                    <h:outputText value="#{tal.totalDisponible}" />
+                                </p:column>
+                                
+                                <p:column headerText="Editar" styleClass="lead section-lead" id="editar" >
+                                    <h:commandButton actionListener="#{talonarioController.editarTalonario()}" value="Editar"/>
+                                </p:column>
+                                
+                                <p:column headerText="Eliminar" styleClass="lead section-lead" id="eliminar" >
+                                    <h:commandButton actionListener="#{talonarioController.eliminarTalonario(tln)}" value="Eliminar"/>
+                                </p:column>
+                     
+                            </p:dataTable> 
+
+                        </h:form>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <footer class="text-center">
+
+                    <p>Global Bill System <br/>
+                        Copyright  <span class="fa fa-copyright"></span>2016 <br/>
+                        Version 4.0 <br/> 
+                    </p>
+                </footer>
+            </div>
+        </div>
+    </h:body>
+</html>
+
+

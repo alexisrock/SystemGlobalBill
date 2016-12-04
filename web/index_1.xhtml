@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+         <h:outputStylesheet name="css/bootstrap.css"/>
+        <h:outputStylesheet name="css/font-awesome.css"/>
+        <h:outputStylesheet name="css/style_light.css"/>
+        <h:outputStylesheet name="fonts/font-awesome.css"/>
+        <h:outputStylesheet name="css/estilos.css"/>
+        <h:outputStylesheet  name="css/default.css"/>
+        <h:outputStylesheet name="css/component.css"/>
+        <h:outputStylesheet name="css/fullcalendar.css" />
+        <h:outputStylesheet name="css/sweetalert.css" />
+        <h:outputStylesheet name="css/sweetalert.css"/>
+        <h:outputStylesheet name="css/AdminLTE.min.css"/>
+        
+    </h:head>
+    <h:body>
+        
+        <div id="page-content-wrapper">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+
+                        <div class="col-xs-18 col-md-12">
+                            <div href="#" class="thumbnail">
+
+                                <img src="resources/imagenes/logo3.png" height="800" width="600"/>
+
+
+                                    <div class="row">
+                                        <br/>
+                                            <br/>
+                                                </div>
+                                                <div class="row">
+
+                                                    <div class="col-xs-7 col-md-6">
+                                                        <div href="#" class="thumbnail">
+
+
+
+                                                            
+                                                                  
+                                                                   
+                                                                        <h3 styleClass="text-center"> Iniciar Sesión</h3>
+                                                                                                                           
+                                                                        
+                                                                  <h:form styleClass="form-horizontal container-fluid contacto" id= "login">
+                                                                      <f:view>
+                                                                <p:growl id="growl" sticky="true" showDetail="true" autoUpdate="true"/>
+                                                                
+                                                                        <div styleClass="col-md-3 col-xs-2"></div>
+                                                                        <div styleClass="text-center">
+                                                                            <div styleClass="col-md-6 col-xs-7">              
+                                                                               
+                                                                                 <p:outputLabel value="usuario " for="nombresua"/>
+                                                                                 <h:outputText value=""/>
+                                                                                 <h:inputText id="nombresua" title="nombreusua" value="#{loginControlador.usuasignado.nombreUsuario}"/>
+                                                                                
+                                                                                 
+                                                                                
+                                                                                
+                                                                                    </div>
+                                                                             </div>
+                                                                                            <div styleClass="col-md-3 col-xs-2"></div>
+                                                                                          
+                                                                                            <!-- Password input-->
+                                                                                            <div styleClass="row">
+                                                                                                <div styleClass="col-md-3 col-xs-2"></div>
+                                                                                                <div styleClass="text-center">
+                                                                                                    <div styleClass="col-md-6 col-xs-7"> 
+                                                                                                       
+                                                                                                              <p:outputLabel value="Contraseña" for="contrasenia"/>
+                                                                                                              <h:outputText value=""/>
+                                                                                                              <h:inputText id="contrasenia" value="#{loginControlador.usuasignado.contrasenia}"/>
+                                                                                                              <div id="textDiv2" style="color: red;"></div>
+                                                                                       
+                                                                                                        
+                                                                                                        
+                                                                                                    </div>
+                                                                                                </div>
+
+                                                                                                <div styleClass="col-md-3 col-xs-2"></div>
+
+                                                                                            </div>
+
+                                                                                            <!-- Button -->
+                                                                                            <div styleClass="row">       
+                                                                                                <div styleClass="col-md-3 col-xs-2">  </div>
+                                                                                                <div styleClass="col-md-6 col-xs-7">
+                                                                                                    <div styleClass="">                  
+                                                                                                        
+                                                                                                        <h:commandButton id="boton3" actionListener="#{loginControlador.validarUsuario()}" value="Ingresar"/>
+                       
+                                                                                                        
+                                                                                                    </div>
+                                                                                                </div>
+
+                                                                                                <div styleClass="col-md-3  col-xs-2">  </div>
+                                                                                            </div> 
+
+                                                                                        </f:view>
+                                                                                   
+                                                                  </h:form>
+                                                                                            <div class="row">
+
+                                                                                                <div></div>
+                                                                                                <div class="text-center col-md-"> <a href="">¿Olvido su Contraseña?</a></div>
+                                                                                            </div>
+
+
+
+
+                                                                                            </div>
+                                                                                            </div>
+                                                                                            <div class="col-xs-6 col-md-6">
+                                                                                                <div href="#" class="thumbnail">
+
+
+
+                                                                                                    <h3>¡Bienvenido!</h3> 
+                                                                                                    <p  styleClass="text-justify container-fluid">Globa Bill System le permitira acceder a diferentes funciones como administrador, asi como de tener el control sobre su compañia y su respectivo proceso de facturación, ademas el sistema cuenta con una barra de navegación y un diseño funcional y de facil comprensión.
+                                                                                                    </p>
+
+
+                                                                                                </div></div>
+                                                                                            </div></div>
+
+
+                                                                                            </div>
+
+                                                                                            </div>
+                                                                                            </div>
+
+                                                                                            <!-- /#page-content-wrapper -->
+                                                                                            </div>
+                                                                                            <!-- /#wrapper -->
+
+
+                                                                                        
+                                                                                        <h:outputStylesheet>
+                                                                                                input[type=text] {border:1px solid #808080;}
+                                                                                                input[type=password] {border:1px solid #808080;}
+                                                                                                form label {display:inline-block;width:100px;}
+                                                                                            </h:outputStylesheet>
+                                                                                            <h:outputStylesheet>
+                                                                                                #miDiv {
+                                                                                                    margin-top:30px; 
+                                                                                                    margin-bottom:30px; 
+                                                                                                    border:none;
+                                                                                                    height:30px; 
+                                                                                                    color:red;
+                                                                                                    width:240px;
+                                                                                                    font-family:"Trebuchet MS";
+                                                                                                }
+                                                                                           </h:outputStylesheet>
+
+
+
+
+
+
+
+        </div>
+                                                                                            </h:body>
+                                                                                            </html>
+

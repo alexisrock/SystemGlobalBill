@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Listar Entrega de Talonarios </title>
+        <h:outputStylesheet name="css/bootstrap.css"/>
+        <h:outputStylesheet name="css/font-awesome.css"/>
+        <h:outputStylesheet name="css/style_light.css"/>
+        <h:outputStylesheet name="fonts/font-awesome.css"/>
+        <h:outputStylesheet name="/css/theme.green.css"/>
+        <h:outputStylesheet name="css/estilos.css"/>
+        <h:outputStylesheet  name="css/default.css"/>
+        <h:outputStylesheet name="css/component.css"/>
+        <h:outputStylesheet name="css/fullcalendar.css" />
+        <h:outputStylesheet name="css/sweetalert.css" />
+        <h:outputStylesheet name="css/sweetalert.css"/>
+        <h:outputStylesheet name="css/AdminLTE.min.css"/>
+        </h:head>
+    <h:body>
+
+        <div id="page-content-wrapper">
+            <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+                <span class="hamb-middle"></span>
+                <span class="hamb-bottom"></span>
+            </button>
+
+            <div class="row">
+                <ol class="breadcrumb">
+                    <li><a href="index.html">&nbsp; Inicio</a></li>
+                    <li>&nbsp; Listar Asignaciones </li>
+                </ol>
+                <div class="col-xs-1 col-md-1"></div>
+                <div class="col-xs-10   col-md-10">
+                    <div href="#" class="thumbnail coloralexis"> 
+                        <h1 class="text-center">Entrega de Talonario</h1>
+                        <h:form>
+                            <p:dataTable id="tablelistarEntregaTal"  value="#{entregaTalonarioController.entregaTalonarioList}" var="entr">
+
+
+                                <p:column  headerText="Fecha"  id="fecha" filterBy="#{entr.fechaEntrega}" filterMatchMode="contains">
+                                    <h:outputText value="#{entr.fechaEntrega}"  />
+
+                                </p:column>
+                                <p:column headerText="Número de Talonario"  id="talonario" filterBy="#{entr.talonario.idTalonario}" filterMatchMode="contains">
+                                    <h:outputText value="#{entr.talonario.idTalonario}" />
+                                </p:column>
+                                <p:column headerText="Recaudador "  id="recaudador" filterBy="#{entr.recaudador.cedula}" filterMatchMode="contains">
+                                    <h:outputText value="#{entr.recaudador.cedula}" />
+                                </p:column>
+                                
+                            </p:dataTable> 
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <footer class="text-center">
+
+                    <p>Global Bill System <br/>
+                        Copyright  <span class="fa fa-copyright"></span>2016 <br/>
+                        Version 4.0 <br/> 
+                    </p>
+                </footer>
+            </div>
+        </div>
+    </h:body>
+</html>
+
+

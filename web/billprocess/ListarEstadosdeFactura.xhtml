@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Listar Estados Factura </title>
+        <h:outputStylesheet name="css/bootstrap.css"/>
+        <h:outputStylesheet name="css/font-awesome.css"/>
+        <h:outputStylesheet name="css/style_light.css"/>
+        <h:outputStylesheet name="fonts/font-awesome.css"/>
+        <h:outputStylesheet name="/css/theme.green.css"/>
+        <h:outputStylesheet name="css/estilos.css"/>
+        <h:outputStylesheet  name="css/default.css"/>
+        <h:outputStylesheet name="css/component.css"/>
+        <h:outputStylesheet name="css/fullcalendar.css" />
+        <h:outputStylesheet name="css/sweetalert.css" />
+        <h:outputStylesheet name="css/sweetalert.css"/>
+        <h:outputStylesheet name="css/AdminLTE.min.css"/>
+    </h:head>
+    <h:body>
+
+   <div id="page-content-wrapper">
+            <div class="row">
+                <ol class="breadcrumb">
+                    <li><a href="index.xhtml">&nbsp; Inicio</a></li>
+                    <li>&nbsp; Listar Estados De Factura</li>
+                </ol>
+                <div class="col-xs-1 col-md-1"></div>
+                <div class="col-xs-10   col-md-10">
+                    <div href="#" class="thumbnail coloralexis">
+
+                        <h1 class="text-center">Listar Estados De Factura </h1>
+                        <h:form>
+                            <p:dataTable id="Tableestado2" styleClass="tablesorter tablesorter-green " value="#{estadofacturaController.listarEstadofactura()}" var="tempor">
+
+
+                                <p:column  headerText="Codigo Estado Factura" styleClass="lead section-lead" id="idEstadosFactura" filterBy="#{tempor.idEstadosFactura}" filterMatchMode="contains">
+                                    <h:outputText value="#{tempor.idEstadosFactura}"  />
+
+                                </p:column>
+                                <p:column headerText="Nombre del estado" styleClass="lead section-lead" id="Nombre" filterBy="#{tempor.nombre}" filterMatchMode="contains">
+                                    <h:outputText value="#{tempor.nombre}" />
+                                </p:column>
+                                <p:column headerText="Descripcion del estado" styleClass="lead section-lead" id="descripcion">
+                                    <h:outputText value="#{tempor.descripcion}" />
+                                </p:column>
+                                <p:column headerText="Opciones" styleClass="lead section-lead" id="EliminarestadoFac" >
+                                    <h:commandLink action="#{estadofacturaController.eliminar(tempor)}" class="btn btn-default">Eliminar</h:commandLink>
+                                    <h:commandLink action="#{estadofacturaController.edit(tempor)}" class="btn btn-default">Editar</h:commandLink>
+                                </p:column>
+
+
+                            </p:dataTable>
+
+                        </h:form>
+
+
+                    </div>
+                </div>
+            </div>
+            <h:outputScript>
+
+
+                $(document).ready(function(){
+                $(function(){
+                $("#myTable").tablesorter(
+                {
+                theme : 'blue',
+
+                sortList : [[1,0],[2,0],[3,0]],
+
+                // header layout template; {icon} needed for some themes
+                headerTemplate : '{content}{icon}',
+
+                // initialize column styling of the table
+                widgets : ["columns"],
+                widgetOptions : {
+                // change the default column class names
+                // primary is the first column sorted, secondary is the second, etc
+                columns : [ "primary", "secondary", "tertiary" ]
+                }
+                });
+                });
+                });
+
+            </h:outputScript>
+
+        </div>
+    </h:body>
+
+</html>

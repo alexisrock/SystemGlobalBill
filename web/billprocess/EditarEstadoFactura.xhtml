@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Editar Estado De Factura</title>
+        <h:outputStylesheet name="css/bootstrap.css"/>
+        <h:outputStylesheet name="css/font-awesome.css"/>
+        <h:outputStylesheet name="css/style_light.css"/>
+        <h:outputStylesheet name="fonts/font-awesome.css"/>
+        <h:outputStylesheet name="css/estilos.css"/>
+        <h:outputStylesheet  name="css/default.css"/>
+        <h:outputStylesheet name="css/component.css"/>
+        <h:outputStylesheet name="css/fullcalendar.css" />
+        <h:outputStylesheet name="css/sweetalert.css" />
+        <h:outputStylesheet name="css/sweetalert.css"/>
+        <h:outputStylesheet name="css/AdminLTE.min.css"/>
+        
+    </h:head>
+    <h:body>
+
+        <div id="page-content-wrapper">
+            <div class="row">
+                <ol class="breadcrumb">
+                    <li><a href="ListarEstadosFactura.xhtml">&nbsp; Inicio</a></li>
+                    <li>&nbsp; Estados De Factura </li>
+                </ol>
+                        <div class="col-xs-1 col-md-1"></div>
+                        
+                            <div href="#" class="thumbnail coloralexis"> 
+                                <h1 class="text-center">Editar Estado De Factura</h1>
+
+                                <h4 class="lineaale" style="color:#0A0606;">Ingrese todos los datos requeridos del formulario</h4> 
+                                <br/>
+                                <h:form class="text-center">
+                                    <h:messages errorClass="errors" showDetail="true" 
+                                                showSummary="true" warnStyle="color:blue" 
+                                                infoStyle="color:green" errorStyle="color:red"/>
+
+
+                                    <div class="row"> 
+                                        <div class="col-xs-5 col-md-5">
+                                            <p:outputLabel value="Codigo Estado Factura" for="idEstadosFactura"/>
+
+                                        </div>
+                                        <div class="col-xs-5 col-md-5">
+                                            <h:inputText id="idEstadosFactura" title="idEstadosFactura" value="#{estadofacturaController.estadoFactura.idEstadosFactura}">
+                                                <p:message for="idEstadosFactura" />
+
+                                            </h:inputText>
+                                            <br/>
+                                        </div>
+                                    </div> 
+
+
+                                    <div class="row"> 
+                                        <div class="col-xs-5 col-md-5">
+                                            <p:outputLabel value="Nombre Estado" for="Nombre"/>
+
+                                        </div>
+                                        <div class="col-xs-5 col-md-5">
+                                            <h:inputText id="Nombre" title="Nombre" value="#{estadofacturaController.estadoFactura.nombre}">
+                                                <p:message for="Nombre" />
+
+                                            </h:inputText>
+                                            <br/>
+                                        </div>
+                                    </div>
+
+                                    <div class="row"> 
+                                        <div class="col-xs-5 col-md-5">
+                                            <p:outputLabel value="Descripcion del estado" for="descripcion"/>
+
+                                        </div>
+                                        <div class="col-xs-5 col-md-5">
+                                            <h:inputText id="descripcion" title="descripcion" value="#{estadofacturaController.estadoFactura.descripcion}">
+                                                <p:message for="descripcion" />
+
+                                            </h:inputText>
+                                            <br/>
+                                        </div>
+                                    </div>
+
+                                    <br/>
+                                    <h:commandButton id="botoneditar" actionListener="#{estadofacturaController.edit()}" value="Editar"/>
+                                </h:form>
+
+                            </div>
+                        </div>
+                    </div>
+               
+            
+        
+    </h:body>
+</html>
+
