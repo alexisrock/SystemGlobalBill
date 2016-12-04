@@ -22,7 +22,7 @@ import javax.ejb.EJB;
  */
 @Named(value = "localidadBean")
 @SessionScoped
-public class LocalidadBean implements Serializable {
+public class LocalidadController implements Serializable {
       private static final long serialVersionUID = 1L;
     @EJB
       private CiudadFacadeLocal ciudadFacade;
@@ -38,7 +38,7 @@ public class LocalidadBean implements Serializable {
     /**
      * Creates a new instance of LocalidadBean
      */
-    public LocalidadBean() {
+    public LocalidadController() {
     }
      @PostConstruct()
 public void init(){

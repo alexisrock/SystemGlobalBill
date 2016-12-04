@@ -9,42 +9,43 @@ import com.globalbill.backend.Entities.Actualizacionproducto;
 import com.globalbill.backend.Entities.Producto;
 import com.globalbill.backend.model.ActualizacionproductoFacadeLocal;
 import com.globalbill.backend.model.ProductoFacadeLocal;
-
-import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
-import java.io.Serializable;
-import javax.ejb.EJB;
 import java.util.List;
+import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
+import javax.inject.Named;
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import org.primefaces.context.RequestContext;
 
 /**
  *
- * @author Administrador
+ * @author Global Bill System
  */
-@Named(value = "actualizarProductoBean")
+@Named(value = "actualizarProductoController")
 @SessionScoped
-public class ActualizarProductoBean implements Serializable {
-
-    /**
-     * Creates a new instance of ActualizarProductoBean
-     */
+public class ActualizarProductoController {
     
+        private static final long serialVersionUID = 1L;
+
+
     @EJB
     private ProductoFacadeLocal productoFacade;
-    
+
     @EJB
     private ActualizacionproductoFacadeLocal actualizacionFacade;
     private Actualizacionproducto actualizacionproducto;
     private List<Actualizacionproducto> actualist;
     private List<Producto> productolist;
+
     
-  
-    
-    
-    public ActualizarProductoBean() {
+    @PostConstruct()
+    public void init() {
         actualizacionproducto = new Actualizacionproducto();
+    }
+    
+    public ActualizarProductoController(Actualizacionproducto actualizacionproducto) {
+        this.actualizacionproducto = actualizacionproducto;
     }
 
     public Actualizacionproducto getActualizacionproducto() {
@@ -72,41 +73,41 @@ public class ActualizarProductoBean implements Serializable {
     public void setProductolist(List<Producto> productolist) {
         this.productolist = productolist;
     }
-    
-    public String registrarActulizacion(){
-        try{
-        actualizacionFacade.create(actualizacionproducto);
-            System.out.println("numero de registros"+productolist.size());
-         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "", "producto registrado correctamente"));
-         
 
-        return " ";
-      }catch(Exception e){
-  FacesContext context = FacesContext.getCurrentInstance();
+    public String registrarActulizacion() {
+        try {
+            actualizacionFacade.create(actualizacionproducto);
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "", "producto registrado correctamente"));
+
+            return " ";
+        } catch (Exception e) {
+            FacesContext context = FacesContext.getCurrentInstance();
             context.addMessage(null, new FacesMessage(
-            FacesMessage.SEVERITY_ERROR,"Se produjo un error: ", e.getMessage()));
-            
-            FacesMessage fm = new FacesMessage(FacesMessage.SEVERITY_ERROR, 
-            "Se produjo un error al insertar. "+ 
-            "el codigo de la excepción es: ", e.getMessage());
-            
+                    FacesMessage.SEVERITY_ERROR, "Se produjo un error: ", e.getMessage()));
+
+            FacesMessage fm = new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                    "Se produjo un error al insertar. "
+                    + "el codigo de la excepción es: ", e.getMessage());
+
             RequestContext.getCurrentInstance().showMessageInDialog(fm);
-    
+
         }
         return " ";
     }
-      
-    
-    
-    public String editaractualizacion(Actualizacionproducto actu){
-        actualizacionproducto = actu; 
-        
+
+    public String editarActualizacion(Actualizacionproducto actu) {
+        actualizacionproducto = actu;
+
         return "/faces/resources/ActualizarProducto/editarActulizacion2.xhtml";
     }
-    public String editaactualizacion(){
-    actualizacionFacade.edit(actualizacionproducto);
-       FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "","producto Editado correctamente"));
-     return "/faces/resources/ActualizarProducto/editarActualizacion.xhtml";
+
+    public String editarActualizacion() {
+        actualizacionFacade.edit(actualizacionproducto);
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "", "producto Editado correctamente"));
+        return "/faces/resources/ActualizarProducto/editarActualizacion.xhtml";
     }
-    
+
+    public ActualizarProductoController() {
+    }
+
 }

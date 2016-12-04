@@ -20,7 +20,7 @@ import javax.ejb.EJB;
  */
 @Named(value = "ciudadBean")
 @SessionScoped
-public class CiudadBean implements Serializable {
+public class CiudadController implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -31,7 +31,7 @@ public class CiudadBean implements Serializable {
       private CiudadFacadeLocal ciudadFacade;
       private Ciudad ciudad;
       
-    public CiudadBean() {
+    public CiudadController() {
     }
     
     

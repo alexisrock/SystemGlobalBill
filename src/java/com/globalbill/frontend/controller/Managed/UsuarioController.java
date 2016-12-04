@@ -28,7 +28,7 @@ import org.primefaces.context.RequestContext;
  */
 @Named(value = "usuarioBean")
 @SessionScoped
-public class UsuarioBean implements Serializable {
+public class UsuarioController implements Serializable {
 
        
     private static final long serialVersionUID = 1L;
@@ -47,7 +47,7 @@ public class UsuarioBean implements Serializable {
 //    
     
     
-    public UsuarioBean() {
+    public UsuarioController() {
     }
   
 

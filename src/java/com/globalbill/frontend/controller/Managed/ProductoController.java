@@ -27,7 +27,7 @@ import org.primefaces.context.RequestContext;
  */
 @Named(value = "productoBean")
 @SessionScoped
-public class ProductoBean implements Serializable {
+public class ProductoController implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -38,7 +38,7 @@ public class ProductoBean implements Serializable {
     /**
      * Creates a new instance of ProductoBean
      */
-    public ProductoBean() {
+    public ProductoController() {
     }
 
     public Producto getProducto() {

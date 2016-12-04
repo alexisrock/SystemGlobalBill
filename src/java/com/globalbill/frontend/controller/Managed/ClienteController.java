@@ -26,7 +26,7 @@ import java.util.List;
  */
 @Named(value = "clienteBean")
 @SessionScoped
-public class ClienteBean implements Serializable {
+public class ClienteController implements Serializable {
 
     private static final long serialVersionUID = 1L;
    
@@ -46,7 +46,7 @@ public class ClienteBean implements Serializable {
      private List<Usuario> usuariolist;
      private Usuario usuario;
     
-    public ClienteBean() {
+    public ClienteController() {
     }
 
     public Cliente getCliente() {
