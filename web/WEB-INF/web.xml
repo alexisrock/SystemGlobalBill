@@ -26,16 +26,5 @@
     <extension>xhtml</extension>
     <mime-type>text/html</mime-type>
   </mime-mapping>
-  <error>
-      
-      <error.code>
-          
-      </error.code>
-      
-      
-      
-  </error>
-  
-  
   
 </web-app>
