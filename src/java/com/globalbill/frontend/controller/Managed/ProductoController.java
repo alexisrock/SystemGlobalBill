@@ -25,7 +25,7 @@ import org.primefaces.context.RequestContext;
  *
  * @author Administrador
  */
-@Named(value = "productoBean")
+@Named(value = "productoController")
 @SessionScoped
 public class ProductoController implements Serializable {
 
@@ -34,7 +34,7 @@ public class ProductoController implements Serializable {
     @EJB
     private ProductoFacadeLocal productoFacade;
     private Producto producto;
-    private List<Producto> listarProducto;
+    private List<Producto> listaProducto;
     /**
      * Creates a new instance of ProductoBean
      */
@@ -79,15 +79,15 @@ try{
 
 }
 
-    public List<Producto> getListarProducto() {
+    public List<Producto> getListaProducto() {
         
-        this.listarProducto = productoFacade.findAll();
-System.out.println("numero de registros"+listarProducto.size());
-        return listarProducto;
+        this.listaProducto = productoFacade.findAll();
+System.out.println("numero de registros"+listaProducto.size());
+        return listaProducto;
     }
 
-    public void setListarProducto(List<Producto> listarProducto) {
-        this.listarProducto = listarProducto;
+    public void setListaProducto(List<Producto> listaProducto) {
+        this.listaProducto = listaProducto;
     }
 
 
